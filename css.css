@@ -1,0 +1,64 @@
+
+
+body{
+  background: #312240;
+  text-align: center; 
+  font-family: 'Orbitron', sans-serif;
+}
+button{
+  font-family: 'Orbitron', sans-serif;
+  background: #412D54;
+  color: #C489FF;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 2px #B07BE5;
+}
+#output{
+   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #412D54;
+  color: #C489FF;
+  width: 80%; 
+  padding-top: 10px; 
+  padding-bottom: 3px; 
+  padding-right: 4px; 
+  margin-left: auto;
+margin-right: auto;
+  text-align: right; 
+}
+button:focus {outline:0;}
+
+#numbers > button{
+  border-radius: 20px 20px 50px 50px;
+  height: 35px; 
+  width: 35px; 
+  margin-right: 5px;
+  margin-bottom: 7px; 
+}
+
+button:hover {background-color: #352545}
+button:active {
+  box-shadow: 0 2px #62447F;
+  transform: translateY(4px);
+}
+
+#commands > button{
+  border-radius: 20px 20px 50px 50px;
+  height: 30px; 
+  width: 30px; 
+  margin-right: 3px;
+}
+
+#clearAndEnter > button{
+  border-radius: 10px 10px 30px 30px;
+  width: 50px; 
+  height: 20px; 
+}
+#all{
+ background: #664F7F; 
+ margin-left: 40%; 
+  margin-right: 40%; 
+  padding-top: 2px; 
+  padding-bottom: 8px; 
+}
