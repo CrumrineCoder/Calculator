@@ -6,6 +6,7 @@ function adjustNumberBeingEntered() {
     x.innerHTML = numberBeingEntered.join("");
 }
 function addDigit(number) {
+	console.log(numberBeingEntered); 
 	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
 		numberBeingEntered[numberBeingEntered.length-1] = 0; 
 	}
@@ -41,6 +42,11 @@ function addOperator(command) {
 		adjustNumberBeingEntered();
 		numberBeingEntered.push(empty);
 	}
+}
+function addDecimal(){
+	numberBeingEntered.push("."); 
+	adjustNumberBeingEntered();
+	numberBeingEntered.push(empty); 
 }
 
 
