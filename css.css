@@ -2,12 +2,14 @@
 body{
   background: #3A284C;
   text-align: center; 
+  color: #D3F5EF;
   font-family: 'Orbitron', sans-serif;
 }
 
 /* Calculator Body */
 
 #calculatorBackground{
+
 	background: #2A1340;
 	border: 3px solid white; 
     margin: 100px 35% 100px 35%; 
@@ -26,7 +28,6 @@ table{
   overflow: hidden;
   text-overflow: ellipsis;
   background: #412D54;
-  color: #C489FF;
   height: 30px; 
   text-align: right; 
   margin: 10px; 
@@ -36,12 +37,13 @@ table{
 
 /* Buttons In General */
 button{
+  color: #D3F5EF;
   width: 50px; 
   height: 50px; 
   font-family: 'Orbitron', sans-serif;
   font-size: 24px; 
   background: #794CA8;
-  color: #C489FF;
+  
   text-decoration: none;
   border: none;
   box-shadow: 0 2px #B07BE5;
@@ -60,8 +62,7 @@ button:active {
 /* Operators */
 
 .operator{
-  background: #518562;
-  color: #B0C9B8;   
+  background: #518562; 
   box-shadow: 0 2px #B0C9B8; 
 }
 .operator:hover {
@@ -76,7 +77,6 @@ button:active {
 
 .enter{
 	background: #5C57C9; 
-	color: #918DE3; 
 	box-shadow: 0 2px #918DE3; 
 }
 .enter:hover{
@@ -90,15 +90,33 @@ button:active {
 /* Clear and Delete */
 
 .delete{
-	background: #C2412F; 
-	color: #F2715E; 
-	box-shadow: 0 2px #F2715E; 
+	background: #913235; 
+	box-shadow: 0 2px #C44448; 
 }
 .delete:hover{
-	background: #78281D; 
+	background: #5C2022; 
 }
 .delete:active{
-	 box-shadow: 0 2px #C2412F;
+	 box-shadow: 0 2px #913235;
 	 transform: translateY(4px);
 }
 
+@media screen and (max-width: 700px) {
+	#calculatorBackground{
+		margin: 100px 20% 100px 20%; 
+	}
+	button{
+		width: 40px; 
+		height: 40px; 
+		font-size: 17px;
+	}
+	#calculatorBackground{
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#calculatorBackground{
+		margin: 100px 0 100px 0; 
+	}
+}
