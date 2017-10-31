@@ -1,6 +1,7 @@
 var empty = "&";
 var numberBeingEntered = [empty];
 var commands = ["+", "-", "*", "/", ".", "-", "^"]; 
+var parentheses = 0; 
 function adjustNumberBeingEntered() {
     var x = document.getElementById("display");
     x.innerHTML = numberBeingEntered.join("");
@@ -22,26 +23,9 @@ function addDigit(number) {
 }
 function addOperator(command) {
 	console.log(numberBeingEntered); 
-	if(command == "(" || command == ")"){
-	
-		checkEmpty(); 
-		if(commands.indexOf(numberBeingEntered[numberBeingEntered.length-1] == -1) && command == "("){
-			numberBeingEntered.push("*"); 
-		}
-		
-		numberBeingEntered.push(command);
-		adjustNumberBeingEntered();
-		numberBeingEntered.push(empty);
-	}
-	// If this is the end of parentheses, it's  ok to make a new operator so long as the empty is removed and then readded
-	else if(numberBeingEntered[numberBeingEntered.length-2] == ")"){
-		numberBeingEntered.pop(); 
-		numberBeingEntered.push(command);
-		adjustNumberBeingEntered();
-		numberBeingEntered.push(empty);
-	}
+
 	// If the most recent digit is 'empty', then don't add another operator
-	else if(numberBeingEntered[numberBeingEntered.length-1] != empty){
+	 if(numberBeingEntered[numberBeingEntered.length-1] != empty){
 		numberBeingEntered.push(command);
 		adjustNumberBeingEntered();
 		numberBeingEntered.push(empty);
@@ -116,8 +100,8 @@ function del() {
 
 // This is the functionality for the '=' button
 function equate() {
-
-	if(commands.indexOf(numberBeingEntered[numberBeingEntered.length-2]) != -1 && numberBeingEntered[numberBeingEntered.length-1] != empty){
+	console.log(numberBeingEntered); 
+	//if(commands.indexOf(numberBeingEntered[numberBeingEntered.length-2]) == -1 && numberBeingEntered[numberBeingEntered.length-1] != empty){
 		checkEmpty(); 
 	   // lastNumberEntered = numberBeingEntered.slice(0);
 		var x = document.getElementById("display");
@@ -126,7 +110,7 @@ function equate() {
 		var temp = [];
 		temp.push(numberBeingEntered);
 		numberBeingEntered = temp;
-	}
+	//}
 } 
 function clearAll() {
     numberBeingEntered = [];
