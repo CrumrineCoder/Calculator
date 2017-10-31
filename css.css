@@ -1,64 +1,104 @@
-/*
-
+/* Entire Document */
 body{
-  background: #312240;
+  background: #3A284C;
   text-align: center; 
   font-family: 'Orbitron', sans-serif;
 }
-button{
-  font-family: 'Orbitron', sans-serif;
+
+/* Calculator Body */
+
+#calculatorBackground{
+	background: #2A1340;
+	border: 3px solid white; 
+    margin: 100px 35% 100px 35%; 
+	padding: 0 auto; 
+	text-align: center;  
+	width: 350px; 
+}
+
+table{
+	margin: 0 auto; 
+	padding-bottom: 20px; 
+}
+/* Display */
+#display{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background: #412D54;
+  color: #C489FF;
+  height: 30px; 
+  text-align: right; 
+  margin: 10px; 
+  font-size: 23px; 
+ }
+
+
+/* Buttons In General */
+button{
+  width: 50px; 
+  height: 50px; 
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px; 
+  background: #794CA8;
   color: #C489FF;
   text-decoration: none;
   border: none;
   box-shadow: 0 2px #B07BE5;
 }
-#output{
-   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: #412D54;
-  color: #C489FF;
-  width: 80%; 
-  padding-top: 10px; 
-  padding-bottom: 3px; 
-  padding-right: 4px; 
-  margin-left: auto;
-margin-right: auto;
-  text-align: right; 
-}
-button:focus {outline:0;}
 
-#numbers > button{
-  border-radius: 20px 20px 50px 50px;
-  height: 35px; 
-  width: 35px; 
-  margin-right: 5px;
-  margin-bottom: 7px; 
-}
+button:focus {outline:0;}
 
 button:hover {background-color: #352545}
 button:active {
   box-shadow: 0 2px #62447F;
   transform: translateY(4px);
 }
+/* Num */
 
-#commands > button{
-  border-radius: 20px 20px 50px 50px;
-  height: 30px; 
-  width: 30px; 
-  margin-right: 3px;
+
+/* Operators */
+
+.operator{
+  background: #518562;
+  color: #B0C9B8;   
+  box-shadow: 0 2px #B0C9B8; 
+}
+.operator:hover {
+	background-color: #475C4E
+}
+.operator:active{
+	 box-shadow: 0 2px #518562;
+	 transform: translateY(4px);
 }
 
-#clearAndEnter > button{
-  border-radius: 10px 10px 30px 30px;
-  width: 50px; 
-  height: 20px; 
+/* Enter */
+
+.enter{
+	background: #5C57C9; 
+	color: #918DE3; 
+	box-shadow: 0 2px #918DE3; 
 }
-#all{
- background: #664F7F; 
- margin-left: 40%; 
-  margin-right: 40%; 
-  padding-top: 2px; 
-  padding-bottom: 8px; 
-}*/
+.enter:hover{
+	background: #3E3B8F; 
+}
+.enter:active{
+	 box-shadow: 0 2px #5C57C9;
+	 transform: translateY(4px);
+}
+
+/* Clear and Delete */
+
+.delete{
+	background: #C2412F; 
+	color: #F2715E; 
+	box-shadow: 0 2px #F2715E; 
+}
+.delete:hover{
+	background: #78281D; 
+}
+.delete:active{
+	 box-shadow: 0 2px #C2412F;
+	 transform: translateY(4px);
+}
+

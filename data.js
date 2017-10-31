@@ -13,13 +13,21 @@ function checkEmpty(){
 }
 
 function addDigit(number) { 
+
 	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
 		numberBeingEntered[numberBeingEntered.length-1] = 0; 
 	}
     numberBeingEntered[numberBeingEntered.length - 1] *= 10;
-    numberBeingEntered[numberBeingEntered.length - 1] += number;
+	if(numberBeingEntered[numberBeingEntered.length-1] >= 0){
+		numberBeingEntered[numberBeingEntered.length - 1] += number;
+	}
+	else{
+		numberBeingEntered[numberBeingEntered.length - 1] -= number;
+	}
+    
     adjustNumberBeingEntered();
-}
+
+	}
 function addOperator(command) {
 	// If the most recent digit is 'empty', then don't add another operator
 	 if(numberBeingEntered[numberBeingEntered.length-1] != empty){
@@ -48,6 +56,7 @@ function addDecimal(){
 	}
 }
 function changeSigns(){
+
 	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
 		numberBeingEntered.pop(); 
 		numberBeingEntered.push("-");
@@ -61,7 +70,7 @@ function changeSigns(){
 		numberBeingEntered[numberBeingEntered.length-1]*= -1; 
 		adjustNumberBeingEntered();
 	}
-	
+
 }
 // This is the functionality for the 'Del' button
 function deleteOne(){
@@ -74,7 +83,7 @@ function deleteOne(){
 		numberBeingEntered.pop();
 	}
 	else{
-		if(numberBeingEntered[numberBeingEntered.length-1] > 10){
+		if(Math.abs(numberBeingEntered[numberBeingEntered.length-1]) > 10){
 			numberBeingEntered[numberBeingEntered.length-1] = Math.trunc(numberBeingEntered[numberBeingEntered.length-1] / 10);
 		}
 		else{
