@@ -1,3 +1,5 @@
+
+/*
 var numberBeingEntered = [0];
 var lastNumberEntered = [];
 var commands = ["+", "-", "*", "/", ".", "-"];
@@ -7,6 +9,7 @@ function adjustNumberBeingEntered() {
   x.innerHTML = numberBeingEntered.join("");
 }
 function del() {
+	console.log(numberBeingEntered);
   if (
     commands.indexOf(numberBeingEntered[numberBeingEntered.length - 1]) == -1 &&
     numberBeingEntered[numberBeingEntered.length - 1] != 0
@@ -14,6 +17,7 @@ function del() {
     var numberBeingDeleted = true;
   }
   numberBeingEntered.pop();
+  console.log(numberBeingEntered);
   if (
     commands.indexOf(numberBeingEntered[numberBeingEntered.length - 1]) != -1 &&
     !numberBeingDeleted
@@ -28,9 +32,10 @@ function del() {
 }
 
 function addDigit(number) {
+  console.log(numberBeingEntered); 
   numberBeingEntered[numberBeingEntered.length - 1] *= 10;
   numberBeingEntered[numberBeingEntered.length - 1] += number;
-
+  console.log(numberBeingEntered); 
   adjustNumberBeingEntered();
 }
 
@@ -76,3 +81,4 @@ function clearCurrent() {
   }
   adjustNumberBeingEntered();
 }
+*/
