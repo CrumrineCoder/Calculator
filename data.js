@@ -2,6 +2,7 @@ var empty = "&";
 var numberBeingEntered = [empty];
 var commands = ["+", "-", "*", "/", ".", "-", "^"]; 
 var parentheses = 0; 
+var cursor = 0;
 function adjustNumberBeingEntered() {
     var x = document.getElementById("display");
     x.innerHTML = numberBeingEntered.join("");
