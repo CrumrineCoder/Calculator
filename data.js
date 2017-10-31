@@ -85,7 +85,14 @@ function changeSigns(){
 	}
 	
 }
-
+function deleteOne(){
+	checkEmpty(); 
+	numberBeingEntered.pop(); 
+	if(numberBeingEntered.length ==0){
+		numberBeingEntered[0] = 0; 
+	}
+	adjustNumberBeingEntered();
+}
 
 function del() {
     console.log(numberBeingEntered);
@@ -109,15 +116,17 @@ function del() {
 
 // This is the functionality for the '=' button
 function equate() {
-	console.log(numberBeingEntered); 
-	checkEmpty(); 
-   // lastNumberEntered = numberBeingEntered.slice(0);
-    var x = document.getElementById("display");
-    numberBeingEntered = eval(numberBeingEntered.join(""));
-    x.innerHTML = numberBeingEntered;
-    var temp = [];
-    temp.push(numberBeingEntered);
-    numberBeingEntered = temp;
+
+	if(commands.indexOf(numberBeingEntered[numberBeingEntered.length-2]) != -1 && numberBeingEntered[numberBeingEntered.length-1] != empty){
+		checkEmpty(); 
+	   // lastNumberEntered = numberBeingEntered.slice(0);
+		var x = document.getElementById("display");
+		numberBeingEntered = eval(numberBeingEntered.join(""));
+		x.innerHTML = numberBeingEntered;
+		var temp = [];
+		temp.push(numberBeingEntered);
+		numberBeingEntered = temp;
+	}
 } 
 function clearAll() {
     numberBeingEntered = [];
