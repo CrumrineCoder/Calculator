@@ -11,7 +11,7 @@ Make buttons square
 FEATURES: Exponents, numpad, clear entire line or clear the one nearest, parentheses, decimals, normal numbers and operators
 
 
-1. Have some numbers and display them on a display when pressed, forming larger and larger numbers by 10
+1. Have some numbers and display them on a display when pressed, forming larger and larger numbers by 10 [DONE] 
 2. Operators
 3. Equals 
 

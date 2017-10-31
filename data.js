@@ -1,12 +1,24 @@
-var numberBeingEntered = [0];
-//var lastNumberEntered = [];
+var empty = "&";
+var numberBeingEntered = [empty];
 var commands = ["+", "-", "*", "/", ".", "-"];
-
-adjustNumberBeingEntered(); 
 function adjustNumberBeingEntered() {
     var x = document.getElementById("display");
     x.innerHTML = numberBeingEntered.join("");
 }
+function addDigit(number) {
+	console.log(numberBeingEntered); 
+	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
+		numberBeingEntered[numberBeingEntered.length-1] = 0; 
+	}
+	console.log(numberBeingEntered); 
+    numberBeingEntered[numberBeingEntered.length - 1] *= 10;
+	console.log(numberBeingEntered); 
+    numberBeingEntered[numberBeingEntered.length - 1] += number;
+	console.log(numberBeingEntered); 
+    adjustNumberBeingEntered();
+}
+
+
 
 function del() {
     console.log(numberBeingEntered);
@@ -25,27 +37,13 @@ function del() {
     numberBeingDeleted = false;
 }
 
-function addDigit(number) {
-    numberBeingEntered[numberBeingEntered.length - 1] *= 10;
-    numberBeingEntered[numberBeingEntered.length - 1] += number;
-    adjustNumberBeingEntered();
-}
-
 
 function addOperator(command) {
-	console.log(numberBeingEntered[numberBeingEntered.length - 1]);
-	console.log(numberBeingEntered[numberBeingEntered.length - 2]);
-    if (numberBeingEntered[numberBeingEntered.length - 1] != 0) {
-        // Separate numbers by the command
-        numberBeingEntered.push(command);
+		
+		numberBeingEntered.push(command);
         adjustNumberBeingEntered();
-        numberBeingEntered.push(0);
-    } else if (command.indexOf(numberBeingEntered[numberBeingEntered.length - 2]) == -1) {
-        // For the start of a statement, change 0 to a command and then make the statement
-        numberBeingEntered[numberBeingEntered.length - 1] = command;
-        adjustNumberBeingEntered();
-        numberBeingEntered.push(0);
-    }
+        numberBeingEntered.push(empty);
+	
 }
 
 // This is the functionality for the '=' button

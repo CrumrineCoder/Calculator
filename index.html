@@ -15,8 +15,8 @@
 			<th><button onclick="addDigit(7)"> 7 </button></th>
 			<th><button onclick="addDigit(8)"> 8 </button></th>
 			<th><button onclick="addDigit(9)"> 9 </button></th> 
-			<th> ( </th>
-			<th> + </th>
+			<th> <button onclick="addOperator( '(' )"> ( </button></th>
+			<th> <button onclick="addOperator( '+' )"> + </button></th>
 			<th> C </th>
 		</tr>
 		<tr>
@@ -24,7 +24,7 @@
 			<th><button onclick="addDigit(5)"> 5 </button></th>
 			<th><button onclick="addDigit(6)"> 6 </button></th> 
 			<th> < </th>
-			<th> - </th>
+			<th> <button onclick="addOperator( '-' )">  - </button></th>
 			<th> Del </th>
 		</tr>
 		<tr>
@@ -32,15 +32,15 @@
 			<th><button onclick="addDigit(2)"> 2 </button></th>
 			<th><button onclick="addDigit(3)"> 3 </button></th> 
 			<th> > </th>
-			<th> . </th>
+			<th> <button onclick="addOperator( '*' )"> * </button></th>
 			<th> = </th>
 		</tr>
 		<tr>
-			<th> 0 </th>
+			<th><button onclick="addDigit(0)"> 0 </button></th>
 			<th> . </th>
 			<th> +/- </th> 
 			<th> ) </th>
-			<th> % </th>
+			<th> <button onclick="addOperator( '/' )"> / </button></th>
 			<th> ^ </th>
 		</tr>
 	</table>
