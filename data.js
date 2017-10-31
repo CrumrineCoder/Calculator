@@ -1,6 +1,6 @@
 var empty = "&";
 var numberBeingEntered = [empty];
-var commands = ["+", "-", "*", "/", ".", "-"]; 
+var commands = ["+", "-", "*", "/", ".", "-", "^"]; 
 function adjustNumberBeingEntered() {
     var x = document.getElementById("display");
     x.innerHTML = numberBeingEntered.join("");
@@ -18,9 +18,7 @@ function addOperator(command) {
 	console.log(numberBeingEntered); 
 	if(command == "(" || command == ")"){
 	
-		if(numberBeingEntered[numberBeingEntered.length-1] == empty){
-			numberBeingEntered.pop(); 
-		}
+		checkEmpty(); 
 		if(commands.indexOf(numberBeingEntered[numberBeingEntered.length-1] == -1) && command == "("){
 			numberBeingEntered.push("*"); 
 		}
@@ -43,10 +41,32 @@ function addOperator(command) {
 		numberBeingEntered.push(empty);
 	}
 }
+function checkEmpty(){
+	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
+			numberBeingEntered.pop(); 
+	}
+}
 function addDecimal(){
-	numberBeingEntered.push("."); 
-	adjustNumberBeingEntered();
-	numberBeingEntered.push(empty); 
+	var lastOperator; 
+	console.log(numberBeingEntered);
+	for(var i=numberBeingEntered.length; i--; i<0){
+		if(numberBeingEntered[i] == "."){
+			lastOperator = ".";
+			break; 
+		}
+		else if(commands.indexOf(numberBeingEntered[i]) != -1){
+			lastOperator = "command";
+			break;
+		}
+		console.log(numberBeingEntered[i]); 
+	}
+	if(lastOperator != "."){
+		checkEmpty(); 
+		numberBeingEntered.push("."); 
+		adjustNumberBeingEntered();
+		numberBeingEntered.push(empty); 
+		console.log(numberBeingEntered);
+	}
 }
 
 
@@ -73,9 +93,7 @@ function del() {
 // This is the functionality for the '=' button
 function equate() {
 	console.log(numberBeingEntered); 
-	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
-		numberBeingEntered.pop(); 
-	}
+	checkEmpty(); 
    // lastNumberEntered = numberBeingEntered.slice(0);
     var x = document.getElementById("display");
     numberBeingEntered = eval(numberBeingEntered.join(""));
