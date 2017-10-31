@@ -6,18 +6,20 @@ function adjustNumberBeingEntered() {
     x.innerHTML = numberBeingEntered.join("");
 }
 function addDigit(number) {
-	console.log(numberBeingEntered); 
 	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
 		numberBeingEntered[numberBeingEntered.length-1] = 0; 
 	}
-	console.log(numberBeingEntered); 
     numberBeingEntered[numberBeingEntered.length - 1] *= 10;
-	console.log(numberBeingEntered); 
     numberBeingEntered[numberBeingEntered.length - 1] += number;
-	console.log(numberBeingEntered); 
     adjustNumberBeingEntered();
 }
-
+function addOperator(command) {
+	if(numberBeingEntered[numberBeingEntered.length-1] != empty){
+		numberBeingEntered.push(command);
+		adjustNumberBeingEntered();
+		numberBeingEntered.push(empty);
+	}
+}
 
 
 function del() {
@@ -38,18 +40,12 @@ function del() {
 }
 
 
-function addOperator(command) {
-		
-		numberBeingEntered.push(command);
-        adjustNumberBeingEntered();
-        numberBeingEntered.push(empty);
-	
-}
+
 
 // This is the functionality for the '=' button
 function equate() {
    // lastNumberEntered = numberBeingEntered.slice(0);
-    var x = document.getElementById("output");
+    var x = document.getElementById("display");
     numberBeingEntered = eval(numberBeingEntered.join(""));
     x.innerHTML = numberBeingEntered;
     var temp = [];
