@@ -43,7 +43,7 @@ button{
   font-family: 'Orbitron', sans-serif;
   font-size: 24px; 
   background: #794CA8;
-  
+   margin: 3px 2px; 
   text-decoration: none;
   border: none;
   box-shadow: 0 2px #B07BE5;
