@@ -5,6 +5,12 @@ function adjustNumberBeingEntered() {
     var x = document.getElementById("display");
     x.innerHTML = numberBeingEntered.join("");
 }
+function checkEmpty(){
+	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
+			numberBeingEntered.pop(); 
+	}
+}
+
 function addDigit(number) {
 	console.log(numberBeingEntered); 
 	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
@@ -41,11 +47,6 @@ function addOperator(command) {
 		numberBeingEntered.push(empty);
 	}
 }
-function checkEmpty(){
-	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
-			numberBeingEntered.pop(); 
-	}
-}
 function addDecimal(){
 	var lastOperator; 
 	console.log(numberBeingEntered);
@@ -67,6 +68,22 @@ function addDecimal(){
 		numberBeingEntered.push(empty); 
 		console.log(numberBeingEntered);
 	}
+}
+function changeSigns(){
+	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
+		numberBeingEntered.pop(); 
+		numberBeingEntered.push("-");
+		adjustNumberBeingEntered();
+		numberBeingEntered.push(empty); 
+	}
+	else if(commands.indexOf(numberBeingEntered[numberBeingEntered.length-1]) != -1){
+		console.log("YOO"); 
+	}
+	else{
+		numberBeingEntered[numberBeingEntered.length-1]*= -1; 
+		adjustNumberBeingEntered();
+	}
+	
 }
 
 
