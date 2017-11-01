@@ -1,4 +1,4 @@
-var empty = "&";
+var empty = "0";
 var numberBeingEntered = [empty];
 var commands = ["+", "-", "*", "/", ".", "-", "**"]; 
 
@@ -11,7 +11,7 @@ function checkEmpty(){
 			numberBeingEntered.pop(); 
 	}
 }
-
+adjustNumberBeingEntered(); 
 function addDigit(number) { 
 
 	if(numberBeingEntered[numberBeingEntered.length-1] == empty){
@@ -98,6 +98,8 @@ function deleteOne(){
 
 // This is the functionality for the '=' button
 function equate() {
+	console.log(numberBeingEntered); 
+	console.log(eval(numberBeingEntered.join(""))); 
 	if(commands.indexOf(numberBeingEntered[numberBeingEntered.length-2]) != -1 && numberBeingEntered[numberBeingEntered.length-1] != empty){
 		checkEmpty(); 
 		var x = document.getElementById("display");
