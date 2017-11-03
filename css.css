@@ -1,4 +1,5 @@
 /* Entire Document */
+
 body{
   background: #3A284C;
   text-align: center; 
@@ -35,7 +36,10 @@ nav {
 
 	background: #2A1340;
 	border: 3px solid white; 
-    margin: 100px 35% 100px 35%; 
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	padding: 0 auto; 
 	text-align: center;  
 	width: 350px; 
@@ -125,9 +129,7 @@ button:active {
 }
 
 @media screen and (max-width: 700px) {
-	#calculatorBackground{
-		margin: 100px 20% 100px 20%; 
-	}
+
 	button{
 		width: 40px; 
 		height: 40px; 
@@ -138,8 +140,3 @@ button:active {
 	}
 }
 
-@media screen and (max-width: 400px) {
-	#calculatorBackground{
-		margin: 100px 0 100px 0; 
-	}
-}
