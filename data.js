@@ -86,12 +86,14 @@ function changeSigns() {
 }
 // DEL button
 function deleteOne() {
+
 	// Delete the latest entry to get rid of the 0. 
     checkEmpty();
 	// If the new latest entry is 0, delete it. 
     if (numberBeingEntered[numberBeingEntered.length - 1] == empty || numberBeingEntered[numberBeingEntered.length - 1] == 0) {
         numberBeingEntered.pop();
     }
+
 	// If the new latest entry is a command, delete it. 
     if (commands.indexOf(numberBeingEntered[numberBeingEntered.length - 1]) != -1) {
         numberBeingEntered.pop();
@@ -105,12 +107,15 @@ function deleteOne() {
             numberBeingEntered[numberBeingEntered.length - 1] = 0;
         }
     }
+	
 	// If the entire display is removed, add a "0" to the end. 
     if (numberBeingEntered.length == 0) {
         numberBeingEntered[0] = 0;
     }
 	// Display the changes. 
-    adjustNumberBeingEntered();
+	checkEmpty(); 
+	adjustNumberBeingEntered();
+	numberBeingEntered.push(0);
 }
 // = button
 function equate() {
