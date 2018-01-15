@@ -1,6 +1,6 @@
 # Calculator App
 
-This is a front end project built as part of FreeCodeCamp's cirriculum. The app is a calculator. 
+This is a front end project built as part of FreeCodeCamp's cirriculum, found [here](https://www.freecodecamp.org/challenges/build-a-javascript-calculator). The app is a calculator. 
 
 ## User Stories
 
