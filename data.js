@@ -99,7 +99,7 @@ function deleteOne() {
         numberBeingEntered.pop();
     } else {
 		// If the new latest entry is not a command, then check if it's above 10.
-        if (Math.abs(numberBeingEntered[numberBeingEntered.length - 1]) > 10) {
+        if (Math.abs(numberBeingEntered[numberBeingEntered.length - 1]) >= 10) {
 			// If so, divide it by 10 as though we were removing the latest number.
             numberBeingEntered[numberBeingEntered.length - 1] = Math.trunc(numberBeingEntered[numberBeingEntered.length - 1] / 10);
         } else {
@@ -112,10 +112,16 @@ function deleteOne() {
     if (numberBeingEntered.length == 0) {
         numberBeingEntered[0] = 0;
     }
-	// Display the changes. 
-	checkEmpty(); 
-	adjustNumberBeingEntered();
-	numberBeingEntered.push(0);
+	// If the latest number is a 0 and not the start of the display, remove it tempoarily so it shows 9 +  instead of 9 + 0. 
+	if( numberBeingEntered[numberBeingEntered.length - 1] == empty && commands.indexOf(numberBeingEntered[numberBeingEntered.length - 2]) != -1){
+		checkEmpty(); 
+		adjustNumberBeingEntered();
+		numberBeingEntered.push(0); 
+	}
+	// If not, just display it otherwise. So if the previous array was ["9", "+", "99"] and it becomes ["9", "+", "9"] we don't need to do the fancy footwork to make it not show a "0" because there isn't one. 
+	else{
+		adjustNumberBeingEntered();
+	}
 }
 // = button
 function equate() {
