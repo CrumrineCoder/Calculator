@@ -1,6 +1,8 @@
 # Calculator App
 
-This is a front end project built as part of FreeCodeCamp's cirriculum, found [here](https://www.freecodecamp.org/challenges/build-a-javascript-calculator). The app is a calculator. 
+This is a web app that resembles a basic calculator.
+
+This was built as part of FreeCodeCamp's backend curriculum. This one was pure javascript and algorithm scripting. I like that I changed the normal function of the -/+ button because it makes more sense the way I have it than the ones on the TI-84s, but that's just my opinion.
 
 ## User Stories
 
