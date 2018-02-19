@@ -14,9 +14,10 @@ This was built as part of FreeCodeCamp's backend curriculum. This one was pure j
 
 ### Personal User Stories
 
-* User Story: I can exponentiate numbers. 
-* User Story: I can do operations on than two numbers.  
+* User Story: I can do operations on more than two numbers.  
 * User Story: I can delete one number or I can clear everything. 
+* User Story: I can exponentiate numbers. 
+
 
 ## Authors
 
