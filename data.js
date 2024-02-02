@@ -66,7 +66,7 @@ function addDecimal() {
         }
     }
 	// If the last used thing was not a '.'
-    if (lastOperator != ".") {
+    if (lastOperator != "." && !(numberBeingEntered[0].toString()).includes(".")) {
 		// If the last entry is a "0", then it becomes a .
         checkEmpty();
         numberBeingEntered.push(".");
